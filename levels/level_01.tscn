@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/background_brown.png" type="Texture" id=1]
+[ext_resource path="res://static_terrain/BlockLarge.tscn" type="PackedScene" id=2]
+[ext_resource path="res://levels/level_01.gd" type="Script" id=4]
+[ext_resource path="res://assets/block_corner.png" type="Texture" id=5]
+[ext_resource path="res://static_terrain/ParticleBlock.tscn" type="PackedScene" id=6]
+[ext_resource path="res://ui/QueueList.tscn" type="PackedScene" id=7]
+
+[node name="level_01" type="Node"]
+script = ExtResource( 4 )
+
+[node name="background" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 2
+
+[node name="static" type="Node2D" parent="."]
+
+[node name="BlockLarge" parent="static" instance=ExtResource( 2 )]
+position = Vector2( 482, 537 )
+
+[node name="ParticleBlock" parent="static" instance=ExtResource( 6 )]
+position = Vector2( 541, 382 )
+
+[node name="ParticleBlock2" parent="static" instance=ExtResource( 6 )]
+position = Vector2( 610, 382 )
+
+[node name="block_preview" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0.392157 )
+texture = ExtResource( 5 )
+
+[node name="QueueList" parent="." instance=ExtResource( 7 )]
