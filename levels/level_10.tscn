@@ -1,0 +1,68 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://blocks/BlockCorner.tscn" type="PackedScene" id=1]
+[ext_resource path="res://blocks/ParticleBlock.tscn" type="PackedScene" id=2]
+[ext_resource path="res://blocks/BlockNarrowRectangle.tscn" type="PackedScene" id=3]
+[ext_resource path="res://blocks/BlockSquare.tscn" type="PackedScene" id=4]
+[ext_resource path="res://blocks/BlockBall.tscn" type="PackedScene" id=5]
+
+[node name="level_00" type="Node2D"]
+
+[node name="static" type="Node2D" parent="."]
+
+[node name="ParticleBlock" parent="static" instance=ExtResource( 2 )]
+position = Vector2( 296, 576 )
+
+[node name="ParticleBlock2" parent="static" instance=ExtResource( 2 )]
+position = Vector2( 368, 472 )
+
+[node name="ParticleBlock3" parent="static" instance=ExtResource( 2 )]
+position = Vector2( 296, 416 )
+
+[node name="ParticleBlock4" parent="static" instance=ExtResource( 2 )]
+position = Vector2( 368, 312 )
+
+[node name="ParticleBlock5" parent="static" instance=ExtResource( 2 )]
+position = Vector2( 664, 416 )
+
+[node name="ParticleBlock6" parent="static" instance=ExtResource( 2 )]
+position = Vector2( 592, 312 )
+
+[node name="ParticleBlock7" parent="static" instance=ExtResource( 2 )]
+position = Vector2( 664, 576 )
+
+[node name="ParticleBlock8" parent="static" instance=ExtResource( 2 )]
+position = Vector2( 592, 472 )
+
+[node name="queue" type="Node2D" parent="."]
+position = Vector2( -224, 64 )
+
+[node name="BlockNarrowRectangle" parent="queue" instance=ExtResource( 3 )]
+position = Vector2( 520, 232 )
+
+[node name="BlockNarrowRectangle2" parent="queue" instance=ExtResource( 3 )]
+position = Vector2( 520, 232 )
+
+[node name="BlockNarrowRectangle3" parent="queue" instance=ExtResource( 3 )]
+position = Vector2( 520, 232 )
+
+[node name="BlockNarrowRectangle4" parent="queue" instance=ExtResource( 3 )]
+position = Vector2( 520, 232 )
+
+[node name="BlockCorner" parent="queue" instance=ExtResource( 1 )]
+position = Vector2( 712, 152 )
+block_scale = Vector2( 3, 3 )
+
+[node name="BlockCorner2" parent="queue" instance=ExtResource( 1 )]
+position = Vector2( 712, 152 )
+block_scale = Vector2( 3, 3 )
+
+[node name="BlockSquare" parent="queue" instance=ExtResource( 4 )]
+
+[node name="BlockSquare2" parent="queue" instance=ExtResource( 4 )]
+
+[node name="BlockSquare3" parent="queue" instance=ExtResource( 4 )]
+
+[node name="BlockSquare4" parent="queue" instance=ExtResource( 4 )]
+
+[node name="BlockBall" parent="queue" instance=ExtResource( 5 )]

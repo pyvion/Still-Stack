@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/negative_sound.ogg-65b8d2e491a6544fda1de9aac8eb11a9.oggstr"
+
+[deps]
+
+source_file="res://assets/sound_effects/negative_sound.ogg"
+dest_files=[ "res://.import/negative_sound.ogg-65b8d2e491a6544fda1de9aac8eb11a9.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,70 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://blocks/BlockRectangle.tscn" type="PackedScene" id=1]
+[ext_resource path="res://blocks/BlockBall.tscn" type="PackedScene" id=2]
+[ext_resource path="res://blocks/BlockSquare.tscn" type="PackedScene" id=3]
+[ext_resource path="res://blocks/ParticleBlock.tscn" type="PackedScene" id=4]
+[ext_resource path="res://blocks/BlockNarrowRectangle.tscn" type="PackedScene" id=5]
+
+[node name="level_00" type="Node2D"]
+
+[node name="static" type="Node2D" parent="."]
+
+[node name="BlockRectangle" parent="static" instance=ExtResource( 1 )]
+position = Vector2( 448, 568 )
+rotation = 1.57079
+block_scale = Vector2( 0.5, 0.5 )
+
+[node name="BlockRectangle2" parent="static" instance=ExtResource( 1 )]
+position = Vector2( 576, 568 )
+rotation = 1.57079
+block_scale = Vector2( 0.5, 0.5 )
+
+[node name="ParticleBlock" parent="static" instance=ExtResource( 4 )]
+position = Vector2( 512, 448 )
+rotation = 1.57079
+
+[node name="ParticleBlock2" parent="static" instance=ExtResource( 4 )]
+position = Vector2( 392, 320 )
+rotation = 1.57079
+
+[node name="ParticleBlock3" parent="static" instance=ExtResource( 4 )]
+position = Vector2( 632, 320 )
+rotation = 1.57079
+
+[node name="ParticleBlock4" parent="static" instance=ExtResource( 4 )]
+position = Vector2( 488, 216 )
+rotation = 1.57079
+
+[node name="ParticleBlock5" parent="static" instance=ExtResource( 4 )]
+position = Vector2( 536, 216 )
+rotation = 1.57079
+
+[node name="queue" type="Node2D" parent="."]
+
+[node name="BlockNarrowRectangle" parent="queue" instance=ExtResource( 5 )]
+position = Vector2( 472, 496 )
+
+[node name="BlockNarrowRectangle2" parent="queue" instance=ExtResource( 5 )]
+position = Vector2( 552, 496 )
+
+[node name="BlockRectangle" parent="queue" instance=ExtResource( 1 )]
+position = Vector2( 504, 376 )
+
+[node name="BlockNarrowRectangle3" parent="queue" instance=ExtResource( 5 )]
+position = Vector2( 440, 296 )
+rotation = -1.57079
+
+[node name="BlockNarrowRectangle4" parent="queue" instance=ExtResource( 5 )]
+position = Vector2( 584, 296 )
+rotation = -1.57079
+
+[node name="BlockBall" parent="queue" instance=ExtResource( 2 )]
+position = Vector2( 512, 248 )
+
+[node name="BlockNarrowRectangle5" parent="queue" instance=ExtResource( 5 )]
+position = Vector2( 512, 200 )
+rotation = -1.57079
+
+[node name="BlockSquare" parent="queue" instance=ExtResource( 3 )]
+position = Vector2( 512, 152 )

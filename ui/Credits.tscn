@@ -1,0 +1,96 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://ui/RegularFont.res" type="DynamicFont" id=1]
+[ext_resource path="res://assets/ui/kenvector_future.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://ui/Credits.gd" type="Script" id=3]
+[ext_resource path="res://assets/background_brown.png" type="Texture" id=4]
+[ext_resource path="res://assets/ui/return.png" type="Texture" id=5]
+[ext_resource path="res://ui/RegularButtonNormal.stylebox" type="StyleBox" id=6]
+[ext_resource path="res://ui/RegularButtonHover.stylebox" type="StyleBox" id=7]
+[ext_resource path="res://ui/RegularButtonPressed.stylebox" type="StyleBox" id=8]
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 26
+extra_spacing_top = 16
+font_data = ExtResource( 2 )
+
+[node name="Credits" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+
+[node name="BackgroundTextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 4 )
+stretch_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 16
+custom_constants/margin_top = 16
+custom_constants/margin_left = 16
+custom_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 1008.0
+margin_bottom = 584.0
+
+[node name="ReturnButton" type="Button" parent="MarginContainer/VBoxContainer"]
+margin_right = 194.0
+margin_bottom = 76.0
+size_flags_horizontal = 0
+custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 1 )
+custom_styles/hover = ExtResource( 7 )
+custom_styles/pressed = ExtResource( 8 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/disabled = SubResource( 4 )
+custom_styles/normal = ExtResource( 6 )
+text = "Return"
+icon = ExtResource( 5 )
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
+margin_top = 80.0
+margin_right = 992.0
+margin_bottom = 568.0
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 2 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer/PanelContainer"]
+margin_top = 147.0
+margin_right = 992.0
+margin_bottom = 341.0
+size_flags_horizontal = 5
+size_flags_vertical = 4
+custom_fonts/bold_font = SubResource( 1 )
+custom_fonts/normal_font = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "[center][b]Made by:[/b]
+Pyvion
+
+[b]Assets used::[/b]
+[url=\"https://www.kenney.nl/assets/rolling-ball-assets\"]\"Rolling Ball Assets\"[/url] by [url=\"https://www.kenney.nl\"]Kenney[/url] is licenced under [url=\"https://creativecommons.org/publicdomain/zero/1.0/\"]CC0[/url].
+[/center]"
+text = "Made by:
+Pyvion
+
+Assets used::
+\"Rolling Ball Assets\" by Kenney is licenced under CC0.
+"
+fit_content_height = true
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ReturnButton" to="." method="_on_ReturnButton_pressed"]
+[connection signal="meta_clicked" from="MarginContainer/VBoxContainer/PanelContainer/RichTextLabel" to="." method="_on_RichTextLabel_meta_clicked"]

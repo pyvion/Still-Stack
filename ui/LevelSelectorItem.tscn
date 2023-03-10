@@ -1,0 +1,32 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://assets/ui/locked.png" type="Texture" id=1]
+[ext_resource path="res://ui/LevelSelectorItem.gd" type="Script" id=2]
+[ext_resource path="res://ui/RegularButtonNormal.stylebox" type="StyleBox" id=3]
+[ext_resource path="res://ui/RegularButtonHover.stylebox" type="StyleBox" id=4]
+[ext_resource path="res://ui/RegularButtonPressed.stylebox" type="StyleBox" id=5]
+[ext_resource path="res://ui/RegularFont.res" type="DynamicFont" id=6]
+[ext_resource path="res://ui/LevelSelectorItemNomal.stylebox" type="StyleBox" id=7]
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[node name="LevelSelectorItem" type="Button"]
+rect_min_size = Vector2( 80, 80 )
+mouse_default_cursor_shape = 2
+custom_fonts/font = ExtResource( 6 )
+custom_styles/hover = ExtResource( 4 )
+custom_styles/pressed = ExtResource( 5 )
+custom_styles/focus = SubResource( 2 )
+custom_styles/disabled = ExtResource( 7 )
+custom_styles/normal = ExtResource( 3 )
+text = "1"
+script = ExtResource( 2 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color( 0.137255, 0.670588, 0.898039, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -1.0
+margin_bottom = -8.0
+texture = ExtResource( 1 )
+stretch_mode = 4

@@ -1,0 +1,165 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://blocks/BlockRectangle.tscn" type="PackedScene" id=1]
+[ext_resource path="res://blocks/BlockNarrowRectangle.tscn" type="PackedScene" id=2]
+[ext_resource path="res://blocks/ParticleBlock.tscn" type="PackedScene" id=3]
+[ext_resource path="res://blocks/BlockSquare.tscn" type="PackedScene" id=4]
+[ext_resource path="res://blocks/BlockCorner.tscn" type="PackedScene" id=5]
+[ext_resource path="res://blocks/BlockBall.tscn" type="PackedScene" id=6]
+
+[node name="level_00" type="Node2D"]
+
+[node name="static" type="Node2D" parent="."]
+
+[node name="BlockRectangle" parent="static" instance=ExtResource( 1 )]
+position = Vector2( 512, 568 )
+rotation = 1.57079
+
+[node name="BlockRectangle2" parent="static" instance=ExtResource( 1 )]
+position = Vector2( 384, 568 )
+rotation = 1.57079
+
+[node name="BlockRectangle3" parent="static" instance=ExtResource( 1 )]
+position = Vector2( 640, 568 )
+rotation = 1.57079
+
+[node name="ParticleBlock" parent="static" instance=ExtResource( 3 )]
+position = Vector2( 272, 476 )
+
+[node name="ParticleBlock2" parent="static" instance=ExtResource( 3 )]
+position = Vector2( 752, 476 )
+
+[node name="ParticleBlock3" parent="static" instance=ExtResource( 3 )]
+position = Vector2( 272, 380 )
+
+[node name="ParticleBlock4" parent="static" instance=ExtResource( 3 )]
+position = Vector2( 752, 380 )
+
+[node name="ParticleBlock5" parent="static" instance=ExtResource( 3 )]
+position = Vector2( 272, 284 )
+
+[node name="ParticleBlock6" parent="static" instance=ExtResource( 3 )]
+position = Vector2( 752, 284 )
+
+[node name="queue" type="Node2D" parent="."]
+
+[node name="BlockSquare" parent="queue" instance=ExtResource( 4 )]
+position = Vector2( 512, 504 )
+
+[node name="BlockNarrowRectangle" parent="queue" instance=ExtResource( 2 )]
+position = Vector2( 320, 456 )
+rotation = 1.57079
+block_scale = Vector2( 1, 2 )
+
+[node name="BlockNarrowRectangle2" parent="queue" instance=ExtResource( 2 )]
+position = Vector2( 704, 456 )
+rotation = 1.57079
+block_scale = Vector2( 1, 2 )
+
+[node name="BlockSquare2" parent="queue" instance=ExtResource( 4 )]
+position = Vector2( 512, 408 )
+
+[node name="BlockNarrowRectangle3" parent="queue" instance=ExtResource( 2 )]
+position = Vector2( 320, 360 )
+rotation = 1.57079
+block_scale = Vector2( 1, 2 )
+
+[node name="BlockNarrowRectangle4" parent="queue" instance=ExtResource( 2 )]
+position = Vector2( 704, 360 )
+rotation = 1.57079
+block_scale = Vector2( 1, 2 )
+
+[node name="BlockSquare3" parent="queue" instance=ExtResource( 4 )]
+position = Vector2( 512, 312 )
+
+[node name="BlockNarrowRectangle5" parent="queue" instance=ExtResource( 2 )]
+position = Vector2( 320, 264 )
+rotation = 1.57079
+block_scale = Vector2( 1, 2 )
+
+[node name="BlockNarrowRectangle6" parent="queue" instance=ExtResource( 2 )]
+position = Vector2( 704, 264 )
+rotation = 1.57079
+block_scale = Vector2( 1, 2 )
+
+[node name="BlockCorner" parent="queue" instance=ExtResource( 5 )]
+position = Vector2( 352, 504 )
+
+[node name="BlockCorner2" parent="queue" instance=ExtResource( 5 )]
+position = Vector2( 320, 408 )
+
+[node name="BlockCorner3" parent="queue" instance=ExtResource( 5 )]
+position = Vector2( 320, 312 )
+
+[node name="BlockCorner4" parent="queue" instance=ExtResource( 5 )]
+position = Vector2( 736, 312 )
+rotation = -1.57079
+
+[node name="BlockCorner5" parent="queue" instance=ExtResource( 5 )]
+position = Vector2( 712, 408 )
+rotation = -1.57079
+
+[node name="BlockCorner6" parent="queue" instance=ExtResource( 5 )]
+position = Vector2( 664, 504 )
+rotation = -1.57079
+
+[node name="BlockBall" parent="queue" instance=ExtResource( 6 )]
+position = Vector2( 592, 504 )
+rotation = -1.57079
+
+[node name="BlockBall2" parent="queue" instance=ExtResource( 6 )]
+position = Vector2( 424, 496 )
+rotation = -1.57079
+
+[node name="BlockBall3" parent="queue" instance=ExtResource( 6 )]
+position = Vector2( 424, 400 )
+rotation = -1.57079
+
+[node name="BlockBall4" parent="queue" instance=ExtResource( 6 )]
+position = Vector2( 600, 400 )
+rotation = -1.57079
+
+[node name="BlockBall5" parent="queue" instance=ExtResource( 6 )]
+position = Vector2( 416, 312 )
+rotation = -1.57079
+
+[node name="BlockBall6" parent="queue" instance=ExtResource( 6 )]
+position = Vector2( 608, 312 )
+rotation = -1.57079
+
+[node name="BlockBall7" parent="queue" instance=ExtResource( 6 )]
+position = Vector2( 368, 312 )
+rotation = -1.57079
+
+[node name="BlockBall8" parent="queue" instance=ExtResource( 6 )]
+position = Vector2( 560, 312 )
+rotation = -1.57079
+
+[node name="BlockBall9" parent="queue" instance=ExtResource( 6 )]
+position = Vector2( 360, 400 )
+rotation = -1.57079
+
+[node name="BlockBall10" parent="queue" instance=ExtResource( 6 )]
+position = Vector2( 552, 400 )
+rotation = -1.57079
+
+[node name="BlockSquare4" parent="queue" instance=ExtResource( 4 )]
+position = Vector2( 296, 208 )
+
+[node name="BlockSquare5" parent="queue" instance=ExtResource( 4 )]
+position = Vector2( 384, 208 )
+
+[node name="BlockSquare6" parent="queue" instance=ExtResource( 4 )]
+position = Vector2( 464, 208 )
+
+[node name="BlockSquare7" parent="queue" instance=ExtResource( 4 )]
+position = Vector2( 528, 208 )
+
+[node name="BlockSquare8" parent="queue" instance=ExtResource( 4 )]
+position = Vector2( 600, 208 )
+
+[node name="BlockSquare9" parent="queue" instance=ExtResource( 4 )]
+position = Vector2( 680, 208 )
+
+[node name="BlockSquare10" parent="queue" instance=ExtResource( 4 )]
+position = Vector2( 744, 208 )

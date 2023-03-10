@@ -1,0 +1,61 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://blocks/BlockCorner.tscn" type="PackedScene" id=1]
+[ext_resource path="res://blocks/BlockBall.tscn" type="PackedScene" id=2]
+[ext_resource path="res://blocks/BlockNarrowRectangle.tscn" type="PackedScene" id=3]
+
+[node name="level_00" type="Node2D"]
+
+[node name="static" type="Node2D" parent="."]
+
+[node name="BlockCorner" parent="static" instance=ExtResource( 1 )]
+position = Vector2( 432, 352 )
+
+[node name="BlockCorner2" parent="static" instance=ExtResource( 1 )]
+position = Vector2( 528, 272 )
+rotation = -1.57079
+
+[node name="BlockCorner3" parent="static" instance=ExtResource( 1 )]
+position = Vector2( 432, 512 )
+
+[node name="BlockCorner4" parent="static" instance=ExtResource( 1 )]
+position = Vector2( 528, 432 )
+rotation = -1.57079
+
+[node name="BlockNarrowRectangle" parent="static" instance=ExtResource( 3 )]
+position = Vector2( 368, 536 )
+
+[node name="BlockNarrowRectangle2" parent="static" instance=ExtResource( 3 )]
+position = Vector2( 592, 536 )
+
+[node name="BlockNarrowRectangle3" parent="static" instance=ExtResource( 3 )]
+position = Vector2( 368, 408 )
+
+[node name="BlockNarrowRectangle4" parent="static" instance=ExtResource( 3 )]
+position = Vector2( 592, 408 )
+
+[node name="BlockNarrowRectangle5" parent="static" instance=ExtResource( 3 )]
+position = Vector2( 368, 280 )
+
+[node name="BlockNarrowRectangle6" parent="static" instance=ExtResource( 3 )]
+position = Vector2( 592, 280 )
+
+[node name="queue" type="Node2D" parent="."]
+
+[node name="BlockBall" parent="queue" instance=ExtResource( 2 )]
+block_scale = Vector2( 0.5, 0.5 )
+
+[node name="BlockBall2" parent="queue" instance=ExtResource( 2 )]
+block_scale = Vector2( 0.5, 0.5 )
+
+[node name="BlockBall3" parent="queue" instance=ExtResource( 2 )]
+block_scale = Vector2( 0.5, 0.5 )
+
+[node name="BlockBall4" parent="queue" instance=ExtResource( 2 )]
+block_scale = Vector2( 0.5, 0.5 )
+
+[node name="BlockBall5" parent="queue" instance=ExtResource( 2 )]
+block_scale = Vector2( 0.5, 0.5 )
+
+[node name="BlockBall6" parent="queue" instance=ExtResource( 2 )]
+block_scale = Vector2( 0.5, 0.5 )
