@@ -185,3 +185,9 @@ func game_over(is_win):
 		$CenterContainer/EndGamePanel/VBoxContainer/WonLabel.visible = false
 		$CenterContainer/EndGamePanel/VBoxContainer/EndLabel.visible = true
 		$CenterContainer/EndGamePanel/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer/NextLevelButton.visible = false
+
+
+func _on_ReturnButton_pressed():
+	GameData.sfx_player.stream = GameData.sound_effects[1]
+	GameData.sfx_player.play()
+	get_tree().change_scene("res://ui/LevelSelector.tscn")

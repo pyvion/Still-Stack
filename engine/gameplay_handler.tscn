@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://engine/gameplay_handler.gd" type="Script" id=1]
 [ext_resource path="res://assets/background_brown.png" type="Texture" id=2]
@@ -19,6 +19,10 @@
 extents = Vector2( 5000, 200 )
 
 [sub_resource type="StyleBoxEmpty" id=2]
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=4]
 
 [node name="gameplay_handler" type="Node"]
 script = ExtResource( 1 )
@@ -169,8 +173,30 @@ custom_styles/normal = ExtResource( 9 )
 text = "Next Level"
 icon = ExtResource( 12 )
 
+[node name="ReturnButton" type="Button" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 16.0
+margin_top = -92.0
+margin_right = 130.0
+margin_bottom = -16.0
+grow_vertical = 0
+custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
+custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 5 )
+custom_styles/hover = ExtResource( 10 )
+custom_styles/pressed = ExtResource( 11 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/disabled = SubResource( 4 )
+custom_styles/normal = ExtResource( 9 )
+icon = ExtResource( 14 )
+
 [connection signal="body_entered" from="OutOfBoundsArea2D" to="." method="_on_OutOfBoundsArea2D_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="pressed" from="CenterContainer/EndGamePanel/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer/HomeButton" to="." method="_on_HomeButton_pressed"]
 [connection signal="pressed" from="CenterContainer/EndGamePanel/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer/RepeatButton" to="." method="_on_RepeatButton_pressed"]
 [connection signal="pressed" from="CenterContainer/EndGamePanel/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer/NextLevelButton" to="." method="_on_NextLevelButton_pressed"]
+[connection signal="pressed" from="ReturnButton" to="." method="_on_ReturnButton_pressed"]
