@@ -3,6 +3,11 @@ extends Node
 var music_player
 var sfx_player
 
+var master_volume = 1.0
+var music_volume = 1.0
+var sound_effects_volume = 1.0
+
+
 const music = [
 	preload("res://assets/music/Juhani Junkala [Chiptune Adventures] 1. Stage 1.ogg"),
 	preload("res://assets/music/Juhani Junkala [Chiptune Adventures] 2. Stage 2.ogg"),
@@ -50,15 +55,32 @@ func _ready():
 	add_child(sfx_player)
 	sfx_player.pause_mode = PAUSE_MODE_PROCESS
 	
-	
+	# Load data
 	load_from_disk()
-	#save_to_disk()
+	load_config()
+	
+	# Setup volume
+	set_master_volume()
+	set_music_volume()
+	set_sound_effects_volume()
+	
 
 func save_to_disk():
 	var file = File.new()
 	file.open("user://save_game.dat", File.WRITE)
 	
 	file.store_64(completed_levels)
+	
+	file.close()
+
+func save_config():
+	var file = File.new()
+	file.open("user://config.dat", File.WRITE)
+	
+	file.store_8(OS.window_fullscreen)
+	file.store_64(master_volume)
+	file.store_64(music_volume)
+	file.store_64(sound_effects_volume)
 	
 	file.close()
 
@@ -74,12 +96,41 @@ func load_from_disk():
 	
 	file.close()
 
+func load_config():
+	var file = File.new()
+	var error_code = file.open("user://config.dat", File.READ)
+	
+	if error_code != OK:
+		return
+	
+	OS.window_fullscreen = file.get_8()
+	master_volume = file.get_64()
+	music_volume = file.get_64()
+	sound_effects_volume = file.get_64()
+	
+	file.close()
+	
 
 func reset_progress():
 	completed_levels = 0
 	current_level_idx = 0
 	save_to_disk()
 	
+	
+func set_master_volume():
+	var _bus := AudioServer.get_bus_index("Master")
+	AudioServer.set_bus_volume_db(_bus, linear2db(master_volume))
+
+
+func set_music_volume():
+	var player:AudioStreamPlayer = GameData.music_player
+	player.volume_db = linear2db(music_volume)
+	
+	
+func set_sound_effects_volume():
+	var player:AudioStreamPlayer = GameData.sfx_player
+	player.volume_db = linear2db(sound_effects_volume)
+
 
 func get_current_level():
 	return level_paths[current_level_idx]
