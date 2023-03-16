@@ -50,6 +50,10 @@ func _ready():
 	
 	# Set preview
 	_update_block_preview()
+	
+	# Update watermark
+	$ScreenshotWatermark.text = "Stack Still - Level {level}".format({"level":GameData.current_level_idx + 1})
+	$ScreenshotWatermark.visible = false
 
 
 func _process(delta):
@@ -163,6 +167,17 @@ func _on_StaticBlock_mouse_exited():
 
 
 func game_over(is_win):
+	# Take screenshot
+	$ReturnButton.visible = false
+	$QueueList.visible = false
+	$ScreenshotWatermark.visible = true
+	yield(get_tree(), "idle_frame")
+	yield(get_tree(), "idle_frame")
+	GameData.save_temp_screenshot()
+	$QueueList.visible = true
+	$ScreenshotWatermark.visible = false
+	
+	# Update ui and save progress
 	if is_win:
 		GameData.sfx_player.stream = GameData.sound_effects[2]
 		GameData.sfx_player.play()
@@ -191,3 +206,9 @@ func _on_ReturnButton_pressed():
 	GameData.sfx_player.stream = GameData.sound_effects[1]
 	GameData.sfx_player.play()
 	get_tree().change_scene("res://ui/LevelSelector.tscn")
+
+
+func _on_SaveScreenshotButton_pressed():
+	GameData.save_screenshot()
+	$CenterContainer/EndGamePanel/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer2/SaveScreenshotButton.visible = false
+	

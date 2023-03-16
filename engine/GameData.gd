@@ -85,6 +85,27 @@ func save_config():
 	file.close()
 
 
+func save_temp_screenshot():
+	var dir = Directory.new()
+	dir.open("user://")
+	if not dir.dir_exists("screenshots"):
+		dir.make_dir("screenshots")
+	var image = get_viewport().get_texture().get_data()
+	image.flip_y()
+	image.save_png("user://temp.png")
+	
+
+func save_screenshot():
+	var dir = Directory.new()
+	dir.open("user://")
+	var date := Time.get_datetime_dict_from_system()
+	var date_string = "{year}-{month}-{day}_{hour}-{minute}-{second}".format(date)
+	var file_path = "user://screenshots/level{level}_{date}.png".format({"level":GameData.current_level_idx+1, "date":date_string})
+	dir.copy("user://temp.png", file_path)
+	var global_path = ProjectSettings.globalize_path("user://screenshots/")
+	OS.shell_open(global_path)
+	
+
 func load_from_disk():
 	var file = File.new()
 	var error_code = file.open("user://save_game.dat", File.READ)
